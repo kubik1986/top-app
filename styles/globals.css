@@ -7,6 +7,7 @@ body {
   background-color: var(--background-color);
 
   font-family: var(--font-family);
+  font-weight: 400;
 }
 
 a {
@@ -29,5 +30,5 @@ a {
   --green: #1dc37e;
   --green-light: #c8f8e4;
   --background-color: #f5f6f8;
-  --font-family: 'Noto Sans KR', sans-serif;
+  --font-family: 'Noto Sans', sans-serif;
 }
