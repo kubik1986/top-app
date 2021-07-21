@@ -20,8 +20,6 @@
 }
 
 .firstLevelActive {
-  margin-bottom: 15px;
-
   color: var(--primary);
 }
 
@@ -39,6 +37,7 @@
 }
 
 .secondLevelWrapper {
+  margin-top: -5px;
   margin-bottom: 20px;
   margin-left: 12px;
   padding: 8px 0 8px 32px;
@@ -51,8 +50,14 @@
 }
 
 .secondLevelBlock {
+  display: none;
+
   margin-top: 13px;
   margin-bottom: 20px;
+}
+
+.secondLevelBlockOpened {
+  display: block;
 }
 
 .secondLevelInner:last-child .secondLevelBlock {
@@ -65,7 +70,7 @@
   margin-bottom: 10px;
 
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 19px;
 }
 
