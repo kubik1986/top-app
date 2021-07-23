@@ -4,8 +4,6 @@
   justify-items: left;
   grid-template-columns: auto 1fr auto;
   gap: 20px;
-
-  padding: 40px 0 20px;
 }
 
 .hhHeader {
@@ -14,6 +12,45 @@
   justify-items: left;
   grid-template-columns: auto 1fr;
   gap: 20px;
+}
 
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skillsItem {
+  margin-right: 0;
+}
+
+.seo {
+  font-size: 18px;
+  line-height: 29px;
+}
+
+.seo h1 {
+  margin-top: 40px;
   margin-bottom: 25px;
+
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+.seo h2 {
+  margin-top: 50px;
+  margin-bottom: 25px;
+
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.seo h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
 }

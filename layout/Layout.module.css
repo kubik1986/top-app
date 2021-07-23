@@ -27,6 +27,8 @@
 
 .footer {
   grid-area: footer;
+
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 765px) {
@@ -40,6 +42,10 @@
 
   .header {
     display: block;
+  }
+
+  .main {
+    padding: 0 20px;
   }
 
   .sidebar {
