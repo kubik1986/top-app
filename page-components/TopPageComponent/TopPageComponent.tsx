@@ -1,13 +1,28 @@
-import { Advantages, HhData, Htag, Ptag, Tag } from '../../components';
+import { Advantages, HhData, Htag, Sort, Tag } from '../../components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import { TopLevelCategory } from '../../interfaces/page.interface';
+import { SortEnum } from '../../components/Sort/Sort.props';
+import { useEffect, useReducer } from 'react';
+import { sortReducer } from './sort.reducer';
 
 export const TopPageComponent = ({
   page,
   products,
   firstCategory,
 }: TopPageComponentProps): JSX.Element => {
+  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(
+    sortReducer,
+    {
+      products,
+      sort: SortEnum.Rating,
+    }
+  );
+
+  const setSort = (sort: SortEnum) => {
+    dispatchSort({ type: sort });
+  };
+
   return (
     <>
       <div className={styles.header}>
@@ -17,10 +32,11 @@ export const TopPageComponent = ({
             {products.length}
           </Tag>
         )}
-        <span>Сортировка</span>
+        <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
-        {products && products.map((p) => <div key={p._id}>{p.title}</div>)}
+        {sortedProducts &&
+          sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
       </div>
       {firstCategory == TopLevelCategory.Courses && page.hh && (
         <>
