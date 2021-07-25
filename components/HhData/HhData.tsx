@@ -4,7 +4,7 @@ import cn from 'classnames';
 import React from 'react';
 import { Card } from '..';
 import RateIcon from './rate.svg';
-import { PriceRu } from '../../helpers/helpers';
+import { priceRu } from '../../helpers/helpers';
 
 export const HhData = ({
   count,
@@ -21,7 +21,7 @@ export const HhData = ({
       <Card className={styles.salary}>
         <div className={styles.salaryItem}>
           <div className={styles.title}>Начальный</div>
-          <div className={styles.salaryValue}>{PriceRu(juniorSalary)}</div>
+          <div className={styles.salaryValue}>{priceRu(juniorSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.rateFilled} />
             <RateIcon />
@@ -30,7 +30,7 @@ export const HhData = ({
         </div>
         <div className={styles.salaryItem}>
           <div className={styles.title}>Средний</div>
-          <div className={styles.salaryValue}>{PriceRu(middleSalary)}</div>
+          <div className={styles.salaryValue}>{priceRu(middleSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.rateFilled} />
             <RateIcon className={styles.rateFilled} />
@@ -39,7 +39,7 @@ export const HhData = ({
         </div>
         <div className={styles.salaryItem}>
           <div className={styles.title}>Профессионал</div>
-          <div className={styles.salaryValue}>{PriceRu(seniorSalary)}</div>
+          <div className={styles.salaryValue}>{priceRu(seniorSalary)}</div>
           <div className={styles.rate}>
             <RateIcon className={styles.rateFilled} />
             <RateIcon className={styles.rateFilled} />
