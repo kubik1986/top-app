@@ -1,5 +1,10 @@
 .star {
+  box-sizing: content-box;
   padding-right: 5px;
+}
+
+span:last-child > .star {
+  padding-right: 0;
 }
 
 .filled {
