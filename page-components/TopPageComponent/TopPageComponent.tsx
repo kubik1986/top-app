@@ -64,7 +64,7 @@ export const TopPageComponent = ({
       <Htag tag="h2">Получаемые навыки</Htag>
       <div className={styles.skills}>
         {page.tags.map((t) => (
-          <Tag className={styles.skillsItem} key={t} color="primary">
+          <Tag key={t} color="primary">
             {t}
           </Tag>
         ))}
