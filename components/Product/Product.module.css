@@ -1,0 +1,334 @@
+.product {
+  display: grid;
+  grid-template-areas:
+    'header priceWrapper'
+    'divider1 divider1'
+    'description description'
+    'features advBlock'
+    'divider2 divider2'
+    'actions actions';
+  grid-template-columns: 1fr 1fr;
+
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.product:last-child {
+  margin-bottom: 0;
+}
+
+.header {
+  display: grid;
+  align-content: start;
+  align-items: start;
+  grid-area: header;
+  grid-template-columns: 70px 1fr;
+  gap: 0 30px;
+}
+
+.logo {
+  grid-row: 1 / 3;
+
+  line-height: 0;
+}
+
+.logoImg {
+  border-radius: 5px;
+}
+
+.title {
+  margin-top: 7px;
+}
+
+.categories {
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  margin-top: 7px;
+}
+
+.priceWrapper {
+  grid-area: priceWrapper;
+
+  display: grid;
+  align-content: start;
+  justify-content: right;
+  grid-template-columns: auto auto 120px;
+  gap: 5px 40px;
+
+  margin-top: 7px;
+  padding-left: 20px;
+}
+
+.price,
+.credit {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.price {
+  grid-area: 1 / 1 / 2 / 2;
+
+  display: flex;
+  align-items: center;
+}
+
+.discount {
+  margin-left: 5px;
+}
+
+.credit {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.month {
+  white-space: nowrap;
+
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.rating {
+  grid-area: 1 / 3 / 2 / 4;
+
+  margin-top: 3px;
+
+  line-height: 0;
+}
+
+.label {
+  text-transform: lowercase;
+
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+}
+
+.description {
+  grid-area: description;
+
+  margin-bottom: 15px;
+}
+
+.features {
+  grid-area: features;
+
+  padding-right: 60px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.featuresList {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.featuresItem {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+.featuresItem:last-child {
+  margin-bottom: 0;
+}
+
+.featureName {
+  order: 1;
+
+  font-weight: 700;
+}
+
+.featureValue {
+  order: 3;
+
+  margin-left: 0;
+}
+
+.featuresItem::after {
+  display: block;
+  flex: 1 1 auto;
+  order: 2;
+
+  content: '';
+
+  border-bottom: 1px dashed #c4c4c4;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.advBlock {
+  grid-area: advBlock;
+}
+
+.advantages,
+.disadvantages {
+  position: relative;
+
+  padding-left: 15px;
+}
+
+.advantages + .disadvantages {
+  margin-top: 20px;
+}
+
+.advantages::after,
+.disadvantages::after {
+  position: absolute;
+  top: 0;
+  left: -1px;
+
+  display: block;
+
+  width: 3px;
+  height: 100%;
+
+  content: '';
+
+  border-radius: 2px;
+}
+
+.advantages::after {
+  background-color: var(--green);
+}
+
+.disadvantages::after {
+  background-color: var(--red);
+}
+
+.advTitle {
+  margin-bottom: 5px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.advText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.actions {
+  grid-area: actions;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.divider1 {
+  grid-area: divider1;
+}
+
+.divider2 {
+  grid-area: divider2;
+}
+
+@media screen and (max-width: 1340px) {
+  .product {
+    grid-template-areas:
+      'header header'
+      'priceWrapper priceWrapper'
+      'divider1 divider1'
+      'description description'
+      'features advBlock'
+      'divider2 divider2'
+      'actions actions';
+  }
+
+  .priceWrapper {
+    justify-content: left;
+
+    margin-top: 20px;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .product {
+    grid-template-areas:
+      'header'
+      'priceWrapper'
+      'divider1'
+      'description'
+      'features'
+      'advBlock'
+      'divider2'
+      'actions';
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    padding-right: 0;
+  }
+
+  .advBlock {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .priceWrapper {
+    align-items: baseline;
+    grid-template-columns: auto auto;
+    gap: 10px 30px;
+  }
+
+  .price,
+  .credit,
+  .rating {
+    grid-area: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0;
+  }
+
+  .logo {
+    grid-row: auto;
+  }
+
+  .categories {
+    grid-column: auto;
+  }
+
+  .priceWrapper {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .price,
+  .credit {
+    margin-bottom: 10px;
+  }
+
+  .featuresItem {
+    display: block;
+  }
+
+  .featureValue {
+    margin-left: 20px;
+  }
+
+  .featuresItem::after {
+    display: none;
+  }
+}
