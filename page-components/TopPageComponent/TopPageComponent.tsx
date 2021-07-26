@@ -49,12 +49,14 @@ export const TopPageComponent = ({
           <HhData {...page.hh} />
         </>
       )}
-      {page.advantages && page.advantages.length > 0 && (
-        <>
-          <Htag tag="h2">Преимущества</Htag>
-          <Advantages advantages={page.advantages} />
-        </>
-      )}
+      {page.advantages &&
+        page.advantages.length > 0 &&
+        page.advantages[0].description && (
+          <>
+            <Htag tag="h2">Преимущества</Htag>
+            <Advantages advantages={page.advantages} />
+          </>
+        )}
       {page.seoText && (
         <div
           className={styles.seo}
