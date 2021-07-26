@@ -1,9 +1,13 @@
-.advantage {
+.advantagesItem {
   display: grid;
   grid-template-columns: 50px 1fr;
   gap: 10px 40px;
 
   margin-bottom: 30px;
+}
+
+.advantagesItem:last-child {
+  margin-bottom: 0;
 }
 
 .title {
@@ -37,4 +41,18 @@
   content: '';
 
   background-color: #d2d2d2;
+}
+
+@media screen and (max-width: 480px) {
+  .advantagesItem {
+    gap: 10px 25px;
+  }
+
+  .description {
+    grid-column: 1 / 3;
+  }
+
+  .description::after {
+    display: none;
+  }
 }

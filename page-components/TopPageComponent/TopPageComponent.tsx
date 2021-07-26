@@ -32,7 +32,7 @@ export const TopPageComponent = ({
             {products.length}
           </Tag>
         )}
-        <Sort sort={sort} setSort={setSort} />
+        <Sort className={styles.sort} sort={sort} setSort={setSort} />
       </div>
       <div>
         {sortedProducts &&

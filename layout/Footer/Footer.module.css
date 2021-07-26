@@ -21,7 +21,7 @@
   color: var(--gray-light);
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 960px) {
   .footer {
     grid-template-columns: 1fr;
   }
