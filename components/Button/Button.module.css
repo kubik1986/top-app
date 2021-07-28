@@ -40,6 +40,8 @@
   display: inline-block;
 
   margin-left: 10px;
+
+  transition: all 0.2s;
 }
 
 .arrow svg {
@@ -47,6 +49,5 @@
 }
 
 .down {
-  transition: all 0.2s;
   transform: rotate(90deg);
 }
