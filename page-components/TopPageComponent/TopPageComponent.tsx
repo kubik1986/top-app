@@ -23,6 +23,10 @@ export const TopPageComponent = ({
     dispatchSort({ type: sort });
   };
 
+  useEffect(() => {
+    dispatchSort({ type: 'reset', initialState: products });
+  }, [products]);
+
   return (
     <>
       <div className={styles.header}>

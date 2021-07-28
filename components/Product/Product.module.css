@@ -111,6 +111,10 @@
   line-height: 19px;
 }
 
+.reviewsCount:hover {
+  color: var(--primary);
+}
+
 .description {
   grid-area: description;
 

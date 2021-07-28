@@ -10,7 +10,7 @@ import { Button } from '../Button/Button';
 import { declOfNumber, priceRu } from '../../helpers/helpers';
 import { Divider } from '../Divider/Divider';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
 
@@ -20,6 +20,15 @@ export const Product = ({
   ...props
 }: ProductProps): JSX.Element => {
   const [isReviewsOpened, setIsReviewsOpened] = useState<boolean>(false);
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewsOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
   return (
     <div className={cn(styles.productsItem, className)} {...props}>
@@ -61,8 +70,22 @@ export const Product = ({
             <span className={styles.month}>/мес</span>
           </div>
           <div className={styles.label}>
-            {product.reviewCount}{' '}
-            {declOfNumber(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+            <a
+              href="#ref"
+              className={styles.reviewsCount}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToReview();
+              }}
+            >
+              {product.reviewCount}
+              {' ' +
+                declOfNumber(product.reviewCount, [
+                  'отзыв',
+                  'отзыва',
+                  'отзывов',
+                ])}
+            </a>
           </div>
           <Rating
             className={styles.rating}
@@ -123,6 +146,7 @@ export const Product = ({
           [styles.opened]: isReviewsOpened,
           [styles.closed]: !isReviewsOpened,
         })}
+        ref={reviewRef}
       >
         <div className={styles.reviewsList}>
           {product.reviews.map((r) => (
