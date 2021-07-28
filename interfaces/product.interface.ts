@@ -3,7 +3,7 @@ export interface ProductCharacteristic {
   name: string;
 }
 
-export interface Review {
+export interface ReviewItem {
   _id: string;
   name: string;
   title: string;
@@ -31,7 +31,7 @@ export interface ProductItem {
   updatedAt: Date;
   __v: number;
   html: string;
-  reviews: Review[];
+  reviews: ReviewItem[];
   reviewCount: number;
   reviewAvg?: number;
 }

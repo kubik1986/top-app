@@ -17,3 +17,13 @@
 .input::placeholder {
   color: var(--gray);
 }
+
+.error {
+  border: 1px solid var(--red);
+}
+
+.errorMsg {
+  margin-top: 5px;
+
+  color: var(--red);
+}

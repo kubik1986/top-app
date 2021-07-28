@@ -1,6 +1,18 @@
+.rating {
+  display: flex;
+
+  width: 120px;
+  height: 20px;
+}
+
 .star {
   box-sizing: content-box;
-  padding-right: 5px;
+  padding-right: 2.5px;
+  padding-left: 2.5px;
+}
+
+span:first-child > .star {
+  padding-left: 0;
 }
 
 span:last-child > .star {
@@ -13,4 +25,14 @@ span:last-child > .star {
 
 .editable {
   cursor: pointer;
+}
+
+.errorMsg {
+  margin-top: 5px;
+
+  color: var(--red);
+}
+
+.error svg {
+  stroke: var(--red);
 }

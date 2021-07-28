@@ -1,3 +1,11 @@
+.productsItem {
+  margin-bottom: 30px;
+}
+
+.productsItem:last-child {
+  margin-bottom: 0;
+}
+
 .product {
   display: grid;
   grid-template-areas:
@@ -9,12 +17,7 @@
     'actions actions';
   grid-template-columns: 1fr 1fr;
 
-  margin-bottom: 30px;
   padding: 30px;
-}
-
-.product:last-child {
-  margin-bottom: 0;
 }
 
 .header {
@@ -228,6 +231,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px 20px;
+}
+
+.reviewsBtn {
+  min-width: 140px;
+}
+
+.reviews.opened {
+  margin-top: -10px;
+}
+
+.closed {
+  visibility: hidden;
+  overflow: hidden;
+
+  max-height: 0;
+  padding: 0;
+}
+
+.opened {
+  visibility: visible;
+
+  max-height: none;
+  padding: 30px;
 }
 
 .divider1 {
