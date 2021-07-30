@@ -4,6 +4,7 @@ import BooksIcon from './icons/books.svg';
 import ProductsIcon from './icons/products.svg';
 import { TopLevelCategory } from '../interfaces/page.interface';
 import { FirstLevelMenuItem } from '../interfaces/menu.interface';
+import { ProductItem } from '../interfaces/product.interface';
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -48,4 +49,24 @@ export const declOfNumber = (
       ? 2
       : cases[number % 10 < 5 ? number % 10 : 5]
   ];
+};
+
+export const ratingComparator = (a: ProductItem, b: ProductItem): number => {
+  const aRating = a.reviewAvg ?? a.initialRating;
+  const bRating = b.reviewAvg ?? b.initialRating;
+  return aRating > bRating
+    ? -1
+    : aRating < bRating
+    ? 1
+    : a.reviewCount > b.reviewCount
+    ? -1
+    : a.reviewCount < b.reviewCount
+    ? 1
+    : a.price > b.price
+    ? 1
+    : -1;
+};
+
+export const priceComparator = (a: ProductItem, b: ProductItem): number => {
+  return a.price > b.price ? 1 : -1;
 };

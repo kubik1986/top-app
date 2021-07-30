@@ -1,3 +1,4 @@
+import { ratingComparator, priceComparator } from './../../helpers/helpers';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { ProductItem } from '../../interfaces/product.interface';
 
@@ -19,19 +20,17 @@ export const sortReducer = (
     case SortEnum.Rating:
       return {
         sort: SortEnum.Rating,
-        products: state.products.sort((a, b) =>
-          a.initialRating > b.initialRating ? -1 : 1
-        ),
+        products: state.products.sort(ratingComparator),
       };
     case SortEnum.Price:
       return {
         sort: SortEnum.Price,
-        products: state.products.sort((a, b) => (a.price > b.price ? 1 : -1)),
+        products: state.products.sort(priceComparator),
       };
     case 'reset':
       return {
         sort: SortEnum.Rating,
-        products: action.initialState,
+        products: action.initialState.sort(ratingComparator),
       };
     default:
       throw new Error('Неверный тип сортировки');
