@@ -6,6 +6,10 @@
   padding-top: 34px;
 }
 
+.logo {
+  fill: var(--primary);
+}
+
 @media screen and (max-width: 960px) {
   .sidebar {
     display: none;
