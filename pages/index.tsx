@@ -16,7 +16,7 @@ import { TopLevelCategory } from '../interfaces/page.interface';
 import { API } from '../helpers/api';
 
 function Home({ menu }: HomeProps): JSX.Element {
-  const [rating, setRating] = useState<number>(4);
+  const [rating, setRating] = useState<number>(2.7);
 
   return (
     <>

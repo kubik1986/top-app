@@ -19,10 +19,6 @@ span:last-child > .star {
   padding-right: 0;
 }
 
-.filled {
-  fill: var(--primary);
-}
-
 .editable {
   cursor: pointer;
 }
