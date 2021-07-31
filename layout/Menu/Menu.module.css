@@ -52,14 +52,14 @@
 }
 
 .secondLevelBlock {
-  display: none;
+  overflow: hidden;
 
   margin-top: 13px;
   margin-bottom: 20px;
-}
 
-.secondLevelBlockOpened {
-  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
 }
 
 .secondLevelInner:last-child .secondLevelBlock {
@@ -70,14 +70,6 @@
   display: block;
 
   margin-bottom: 10px;
-
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 19px;
-}
-
-.thirdLevel:last-child {
-  margin-bottom: 0;
 }
 
 .thirdLevel:hover {
@@ -86,4 +78,8 @@
 
 .thirdLevelActive {
   color: var(--primary);
+}
+
+.thirdLevelWrapper:last-child .thirdLevel {
+  margin-bottom: 0;
 }

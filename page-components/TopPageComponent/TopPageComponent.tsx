@@ -40,7 +40,7 @@ export const TopPageComponent = ({
       </div>
       <div>
         {sortedProducts &&
-          sortedProducts.map((p) => <Product product={p} key={p._id} />)}
+          sortedProducts.map((p) => <Product layout product={p} key={p._id} />)}
       </div>
       {firstCategory == TopLevelCategory.Courses && page.hh && (
         <>
