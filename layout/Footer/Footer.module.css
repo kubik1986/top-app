@@ -24,5 +24,7 @@
 @media screen and (max-width: 960px) {
   .footer {
     grid-template-columns: 1fr;
+
+    padding: 20px;
   }
 }
