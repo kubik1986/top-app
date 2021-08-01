@@ -241,22 +241,7 @@
   min-width: 140px;
 }
 
-.reviews.opened {
-  margin-top: -10px;
-}
-
-.closed {
-  visibility: hidden;
-  overflow: hidden;
-
-  max-height: 0;
-  padding: 0;
-}
-
-.opened {
-  visibility: visible;
-
-  max-height: none;
+.reviews {
   padding: 30px;
 }
 
