@@ -13,8 +13,6 @@
 
 .header {
   grid-area: header;
-
-  display: none;
 }
 
 .sidebar {
@@ -40,15 +38,7 @@
       'footer';
   }
 
-  .header {
-    display: block;
-  }
-
   .main {
     padding: 0 20px;
-  }
-
-  .sidebar {
-    display: none;
   }
 }
