@@ -11,24 +11,26 @@ export const Sort = ({
 }: SortProps): JSX.Element => {
   return (
     <div className={cn(styles.sort, className)} {...props}>
-      <span
-        onClick={() => setSort(SortEnum.Rating)}
-        className={cn({
+      <button
+        className={cn(styles.button, {
           [styles.active]: sort == SortEnum.Rating,
         })}
+        type="button"
+        onClick={() => setSort(SortEnum.Rating)}
       >
         <SortIcon className={styles.sortIcon} />
         По рейтингу
-      </span>
-      <span
-        onClick={() => setSort(SortEnum.Price)}
-        className={cn({
+      </button>
+      <button
+        className={cn(styles.button, {
           [styles.active]: sort == SortEnum.Price,
         })}
+        type="button"
+        onClick={() => setSort(SortEnum.Price)}
       >
         <SortIcon className={styles.sortIcon} />
         По цене
-      </span>
+      </button>
     </div>
   );
 };

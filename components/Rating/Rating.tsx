@@ -7,6 +7,7 @@ import {
   KeyboardEvent,
   forwardRef,
   ForwardedRef,
+  useRef,
 } from 'react';
 
 export const Rating = forwardRef(
@@ -17,6 +18,7 @@ export const Rating = forwardRef(
       setRating,
       error,
       className,
+      tabIndex,
       ...props
     }: RatingProps,
     ref: ForwardedRef<HTMLDivElement>
@@ -24,10 +26,24 @@ export const Rating = forwardRef(
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
       new Array(5).fill(<></>)
     );
+    const ratingArrayRef = useRef<(SVGElement | null)[]>([]);
 
     useEffect(() => {
       constructRating(rating);
-    }, [rating]);
+    }, [rating, tabIndex]);
+
+    const computeTabindex = (rating: number, i: number): number => {
+      if (!isEditable) {
+        return -1;
+      }
+      if (!rating && i == 0) {
+        return tabIndex ?? 0;
+      }
+      if (rating == i + 1) {
+        return tabIndex ?? 0;
+      }
+      return -1;
+    };
 
     const constructRating = (currentRating: number) => {
       const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
@@ -52,13 +68,13 @@ export const Rating = forwardRef(
             viewBox="0 0 20 20"
             fill="#E2E2E2"
             xmlns="http://www.w3.org/2000/svg"
-            tabIndex={isEditable ? 0 : -1}
+            tabIndex={computeTabindex(rating, i)}
             onMouseEnter={() => changeDisplay(i + 1)}
             onMouseLeave={() => changeDisplay(rating)}
             onClick={() => onClick(i + 1)}
-            onKeyDown={(e: KeyboardEvent<SVGElement>) =>
-              isEditable && onSpaceDown(i + 1, e)
-            }
+            onMouseDown={(e) => e.preventDefault()}
+            onKeyDown={handleKey}
+            ref={(r) => ratingArrayRef.current?.push(r)}
           >
             {diff > 0 && diff < 1 && (
               <defs>
@@ -94,11 +110,23 @@ export const Rating = forwardRef(
       setRating(i);
     };
 
-    const onSpaceDown = (i: number, e: KeyboardEvent<SVGElement>) => {
-      if (e.code != 'Space' || !setRating) {
+    const handleKey = (e: KeyboardEvent<SVGElement>) => {
+      if (!isEditable || !setRating) {
         return;
       }
-      setRating(i);
+      if (e.code == 'ArrowRight' || e.code == 'ArrowUp') {
+        e.preventDefault();
+        if (!rating) {
+          setRating(1);
+        } else {
+          setRating(rating < 5 ? rating + 1 : 5);
+        }
+        ratingArrayRef.current[rating]?.focus();
+      } else if (e.code == 'ArrowLeft' || e.code == 'ArrowDown') {
+        e.preventDefault();
+        setRating(rating > 1 ? rating - 1 : 1);
+        ratingArrayRef.current[rating - 2]?.focus();
+      }
     };
 
     return (

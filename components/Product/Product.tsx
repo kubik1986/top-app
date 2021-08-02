@@ -97,6 +97,7 @@ export const Product = motion(
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToReview();
+                    reviewRef.current?.focus({ preventScroll: true });
                   }}
                 >
                   {product.reviewCount}
@@ -169,13 +170,18 @@ export const Product = motion(
             variants={variants}
             initial="hidden"
           >
-            <Card color="blue" className={cn(styles.reviews)} ref={reviewRef}>
+            <Card
+              color="blue"
+              className={cn(styles.reviews)}
+              ref={reviewRef}
+              tabIndex={isReviewsOpened ? 0 : -1}
+            >
               <div className={styles.reviewsList}>
                 {product.reviews.map((r) => (
                   <Review key={r._id} review={r} />
                 ))}
               </div>
-              <ReviewForm productId={product._id} />
+              <ReviewForm productId={product._id} isOpened={isReviewsOpened} />
             </Card>
           </motion.div>
         </div>

@@ -11,6 +11,27 @@
   min-height: 100vh;
 }
 
+.skiplink {
+  position: fixed;
+  top: 0;
+  left: 100px;
+
+  display: block;
+  overflow: hidden;
+
+  height: 0;
+
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.displayed {
+  height: auto;
+  padding: 5px;
+
+  border-radius: 5px;
+}
+
 .header {
   grid-area: header;
 }
@@ -21,6 +42,8 @@
 
 .main {
   grid-area: main;
+
+  outline: none;
 }
 
 .footer {

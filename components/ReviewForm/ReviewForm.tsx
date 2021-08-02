@@ -14,6 +14,7 @@ import { useState } from 'react';
 
 export const ReviewForm = ({
   productId,
+  isOpened,
   className,
   ...props
 }: ReviewFormProps): JSX.Element => {
@@ -57,6 +58,7 @@ export const ReviewForm = ({
           type="text"
           placeholder="Имя"
           error={errors.name}
+          tabIndex={isOpened ? 0 : -1}
         />
         <Input
           {...register('title', {
@@ -65,6 +67,7 @@ export const ReviewForm = ({
           type="text"
           placeholder="Заголовок отзыва"
           error={errors.title}
+          tabIndex={isOpened ? 0 : -1}
         />
         <div className={styles.ratingBlock}>
           <span>Оценка:</span>
@@ -82,6 +85,7 @@ export const ReviewForm = ({
                 setRating={field.onChange}
                 ref={field.ref}
                 error={errors.rating}
+                tabIndex={isOpened ? 0 : -1}
               />
             )}
           />
@@ -101,9 +105,15 @@ export const ReviewForm = ({
           className={styles.description}
           placeholder="Текст отзыва"
           error={errors.description}
+          tabIndex={isOpened ? 0 : -1}
         />
         <div className={styles.submit}>
-          <Button className={styles.submitBtn} appearance="primary">
+          <Button
+            className={styles.submitBtn}
+            appearance="primary"
+            type="submit"
+            tabIndex={isOpened ? 0 : -1}
+          >
             Отправить
           </Button>
           <span>

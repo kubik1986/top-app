@@ -35,7 +35,6 @@
 
   font-size: 12px;
   font-weight: 300;
-  line-height: 16px;
 }
 
 .secondLevelWrapper {
@@ -59,7 +58,6 @@
 
   font-size: 14px;
   font-weight: 600;
-  line-height: 19px;
 }
 
 .secondLevelInner:last-child .secondLevelBlock {
@@ -70,6 +68,8 @@
   display: block;
 
   margin-bottom: 10px;
+
+  outline-offset: -1px;
 }
 
 .thirdLevel:hover {
