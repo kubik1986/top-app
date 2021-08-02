@@ -25,13 +25,13 @@ a {
   --white: white;
   --gray: #a4a4a4;
   --gray-light: #ebebeb;
-  --gray-dark: #787d85;
-  --primary: #7653fc;
-  --primary-hover: #633ff1;
+  --gray-dark: #6c7077;
+  --primary: #7351f5;
+  --primary-hover: #613cf5;
   --red: #fc836d;
   --red-light: #fac6bd;
-  --green: #1dc37e;
-  --green-light: #c8f8e4;
+  --green: #037f47;
+  --green-light: #d5fdec;
   --background-color: #f5f6f8;
   --font-family: 'Noto Sans', sans-serif;
 }

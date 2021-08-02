@@ -208,7 +208,7 @@
 }
 
 .advantages::after {
-  background-color: var(--green);
+  background-color: #1dc37e;
 }
 
 .disadvantages::after {
