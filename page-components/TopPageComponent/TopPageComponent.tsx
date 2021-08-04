@@ -5,6 +5,7 @@ import { TopLevelCategory } from '../../interfaces/page.interface';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
+import { useReducedMotion } from 'framer-motion';
 
 export const TopPageComponent = ({
   page,
@@ -18,6 +19,8 @@ export const TopPageComponent = ({
       sort: SortEnum.Rating,
     }
   );
+
+  const shouldReduceMotion = useReducedMotion();
 
   const setSort = (sort: SortEnum) => {
     dispatchSort({ type: sort });
@@ -51,7 +54,10 @@ export const TopPageComponent = ({
             {sortedProducts &&
               sortedProducts.map((p) => (
                 <li className={styles.productsItem} key={p._id}>
-                  <Product layout product={p} />
+                  <Product
+                    layout={shouldReduceMotion ? false : true}
+                    product={p}
+                  />
                 </li>
               ))}
           </ul>
