@@ -36,3 +36,7 @@
 
   margin-right: 8px;
 }
+
+.ariaLabelSort {
+  display: none;
+}

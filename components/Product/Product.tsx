@@ -81,6 +81,7 @@ export const Product = motion(
                 {priceRu(product.price)}
                 {product.oldPrice && (
                   <Tag className={styles.discount} color="green">
+                    <span className="visually-hidden">Скидка</span>
                     {priceRu(product.price - product.oldPrice)}
                   </Tag>
                 )}
@@ -159,6 +160,7 @@ export const Product = motion(
                 appearance="transparent"
                 arrow={isReviewsOpened ? 'down' : 'right'}
                 onClick={() => setIsReviewsOpened(!isReviewsOpened)}
+                aria-expanded={isReviewsOpened}
               >
                 {isReviewsOpened ? 'Скрыть отзывы' : 'Читать отзывы'}
               </Button>

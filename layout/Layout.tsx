@@ -41,13 +41,14 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
       </a>
       <Header className={styles.header} />
       <Sidebar className={styles.sidebar} />
-      <div
+      <main
         className={styles.main}
         ref={mainRef}
         tabIndex={isSkipLinkDisplayed ? 0 : -1}
+        role="main"
       >
         {children}
-      </div>
+      </main>
       <Footer className={styles.footer} />
       <UpBtn />
     </div>

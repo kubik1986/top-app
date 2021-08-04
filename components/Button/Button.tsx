@@ -25,7 +25,7 @@ export const Button = ({
             [styles.down]: arrow == 'down',
           })}
         >
-          <ArrowIcon />
+          <ArrowIcon aria-hidden="true" />
         </span>
       )}
     </button>
