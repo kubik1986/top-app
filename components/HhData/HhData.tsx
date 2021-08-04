@@ -23,27 +23,27 @@ export const HhData = ({
           <div className={styles.title}>Начальный</div>
           <div className={styles.salaryValue}>{priceRu(juniorSalary)}</div>
           <div className={styles.rate}>
-            <RateIcon className={styles.rateFilled} />
-            <RateIcon />
-            <RateIcon />
+            <RateIcon className={styles.rateFilled} aria-hidden="true" />
+            <RateIcon aria-hidden="true" />
+            <RateIcon aria-hidden="true" />
           </div>
         </div>
         <div className={styles.salaryItem}>
           <div className={styles.title}>Средний</div>
           <div className={styles.salaryValue}>{priceRu(middleSalary)}</div>
           <div className={styles.rate}>
-            <RateIcon className={styles.rateFilled} />
-            <RateIcon className={styles.rateFilled} />
-            <RateIcon />
+            <RateIcon className={styles.rateFilled} aria-hidden="true" />
+            <RateIcon className={styles.rateFilled} aria-hidden="true" />
+            <RateIcon aria-hidden="true" />
           </div>
         </div>
         <div className={styles.salaryItem}>
           <div className={styles.title}>Профессионал</div>
           <div className={styles.salaryValue}>{priceRu(seniorSalary)}</div>
           <div className={styles.rate}>
-            <RateIcon className={styles.rateFilled} />
-            <RateIcon className={styles.rateFilled} />
-            <RateIcon className={styles.rateFilled} />
+            <RateIcon className={styles.rateFilled} aria-hidden="true" />
+            <RateIcon className={styles.rateFilled} aria-hidden="true" />
+            <RateIcon className={styles.rateFilled} aria-hidden="true" />
           </div>
         </div>
       </Card>
