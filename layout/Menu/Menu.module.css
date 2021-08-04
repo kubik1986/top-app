@@ -4,13 +4,22 @@
   color: var(--gray-dark);
 }
 
+.firstLevelList {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.firstLevelItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .firstLevel {
   display: grid;
   align-items: center;
   grid-template-columns: 24px 1fr;
   gap: 20px;
-
-  margin-bottom: 20px;
 
   font-size: 18px;
   font-weight: 500;
@@ -29,39 +38,55 @@
   fill: currentColor;
 }
 
-.secondLevel {
-  cursor: pointer;
-  text-transform: uppercase;
-
-  font-size: 12px;
-  font-weight: 300;
-}
-
-.secondLevelWrapper {
-  margin-top: -5px;
-  margin-bottom: 20px;
+.secondLevelList {
+  margin-top: 15px;
+  margin-bottom: 0;
   margin-left: 12px;
   padding: 8px 0 8px 32px;
+
+  list-style: none;
 
   border-left: 1px solid #dfdfdf;
 }
 
-.secondLevelInner:not(:last-child) {
+.secondLevelItem {
   margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
 }
 
-.secondLevelBlock {
+.secondLevelItem:last-child {
+  margin-bottom: 0;
+}
+
+.secondLevel {
+  padding: 0;
+
+  cursor: pointer;
+  text-transform: uppercase;
+
+  color: inherit;
+
+  border: none;
+  background: none;
+
+  font: inherit;
+}
+
+.thirdLevelList {
   overflow: hidden;
 
   margin-top: 13px;
   margin-bottom: 20px;
+  padding: 0;
+
+  list-style: none;
 
   font-size: 14px;
   font-weight: 600;
-}
-
-.secondLevelInner:last-child .secondLevelBlock {
-  margin-bottom: 0;
+  line-height: 19px;
 }
 
 .thirdLevel {
@@ -80,6 +105,6 @@
   color: var(--primary);
 }
 
-.thirdLevelWrapper:last-child .thirdLevel {
+.thirdLevelItem:last-child .thirdLevel {
   margin-bottom: 0;
 }

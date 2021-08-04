@@ -10,25 +10,25 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
     route: 'courses',
     name: 'Курсы',
-    icon: <CoursesIcon />,
+    icon: <CoursesIcon aria-hidden="true" />,
     id: TopLevelCategory.Courses,
   },
   {
     route: 'services',
     name: 'Сервисы',
-    icon: <ServicesIcon />,
+    icon: <ServicesIcon aria-hidden="true" />,
     id: TopLevelCategory.Services,
   },
   {
     route: 'books',
     name: 'Книги',
-    icon: <BooksIcon />,
+    icon: <BooksIcon aria-hidden="true" />,
     id: TopLevelCategory.Books,
   },
   {
     route: 'products',
     name: 'Товары',
-    icon: <ProductsIcon />,
+    icon: <ProductsIcon aria-hidden="true" />,
     id: TopLevelCategory.Products,
   },
 ];
