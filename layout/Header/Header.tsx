@@ -37,6 +37,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
         color="white"
         icon="burger"
         onClick={() => setIsOpened(true)}
+        aria-label="Открыть меню"
       />
       <motion.div
         className={styles.mobileMenu}
@@ -50,6 +51,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
           color="white"
           icon="cross"
           onClick={() => setIsOpened(false)}
+          aria-label="Закрыть меню"
         />
       </motion.div>
     </header>
