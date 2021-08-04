@@ -75,6 +75,9 @@ export const Rating = forwardRef(
             onMouseDown={(e) => e.preventDefault()}
             onKeyDown={handleKey}
             ref={(r) => ratingArrayRef.current?.push(r)}
+            role={isEditable ? 'radio' : 'presentation'}
+            aria-checked={isEditable ? rating == i + 1 : undefined}
+            aria-label={isEditable ? (i + 1).toString() : undefined}
           >
             {diff > 0 && diff < 1 && (
               <defs>
@@ -137,7 +140,11 @@ export const Rating = forwardRef(
           [styles.error]: error,
         })}
       >
-        <div className={styles.rating}>
+        <div
+          className={styles.rating}
+          role={isEditable ? 'radiogroup' : 'img'}
+          aria-label={isEditable ? 'Оценка' : 'Рейтинг ' + rating + ' из 5'}
+        >
           {ratingArray.map((r, i) => (
             <span key={i}>{r}</span>
           ))}
