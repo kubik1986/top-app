@@ -178,11 +178,13 @@ export const Product = motion(
               ref={reviewRef}
               tabIndex={isReviewsOpened ? 0 : -1}
             >
-              <div className={styles.reviewsList}>
-                {product.reviews.map((r) => (
-                  <Review key={r._id} review={r} />
-                ))}
-              </div>
+              {product.reviews.length > 0 && (
+                <div className={styles.reviewsList}>
+                  {product.reviews.map((r) => (
+                    <Review key={r._id} review={r} />
+                  ))}
+                </div>
+              )}
               <ReviewForm productId={product._id} isOpened={isReviewsOpened} />
             </Card>
           </motion.div>
