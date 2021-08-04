@@ -144,12 +144,17 @@ export const Rating = forwardRef(
           className={styles.rating}
           role={isEditable ? 'radiogroup' : 'img'}
           aria-label={isEditable ? 'Оценка' : 'Рейтинг ' + rating + ' из 5'}
+          aria-invalid={!isEditable ? undefined : error ? true : false}
         >
           {ratingArray.map((r, i) => (
             <span key={i}>{r}</span>
           ))}
         </div>
-        {error && <div className={styles.errorMsg}>{error.message}</div>}
+        {error && (
+          <div className={styles.errorMsg} role="alert">
+            {error.message}
+          </div>
+        )}
       </div>
     );
   }
