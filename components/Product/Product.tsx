@@ -14,6 +14,7 @@ import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
 import { motion } from 'framer-motion';
+import { AnchorBtn } from '../AnchorBtn/AnchorBtn';
 
 export const Product = motion(
   forwardRef(
@@ -154,7 +155,14 @@ export const Product = motion(
             )}
             <Divider className={styles.divider2} />
             <div className={styles.actions}>
-              <Button appearance="primary">Узнать подробнее</Button>
+              <AnchorBtn
+                appearance="primary"
+                href={product.link}
+                target="_blank"
+                aria-label="Узнать подробнее: переход на страницу продукта"
+              >
+                Узнать подробнее
+              </AnchorBtn>
               <Button
                 className={styles.reviewsBtn}
                 appearance="transparent"

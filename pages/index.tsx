@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
 import {
+  AnchorBtn,
   Button,
   Htag,
   Input,
@@ -67,6 +68,12 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Rating rating={rating} isEditable setRating={setRating}></Rating>
       <Input placeholder="Тест" />
       <Textarea placeholder="Тест" />
+      <AnchorBtn href="#" appearance="primary">
+        Ссылка1
+      </AnchorBtn>
+      <AnchorBtn href="#" appearance="transparent" target="_blank">
+        Ссылка2
+      </AnchorBtn>
     </>
   );
 }

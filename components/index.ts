@@ -16,3 +16,4 @@ export * from './Review/Review';
 export * from './ReviewForm/ReviewForm';
 export * from './ButtonIcon/ButtonIcon';
 export * from './UpBtn/UpBtn';
+export * from './AnchorBtn/AnchorBtn';
