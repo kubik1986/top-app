@@ -2,8 +2,16 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 import Head from 'next/head';
 import React from 'react';
 import '../styles/globals.css';
+import ym from 'react-yandex-metrika';
+import { YMInitializer } from 'react-yandex-metrika';
 
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
+  router.events.on('routeChangeComplete', (url: string) => {
+    if (typeof window !== 'undefined') {
+      ym('hit', url);
+    }
+  });
+
   return (
     <>
       <Head>
@@ -15,6 +23,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+        <link rel="preconnect" href="https://mc.yandex.ru" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
           rel="stylesheet"
@@ -27,6 +36,11 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:type" content="article" />
       </Head>
+      <YMInitializer
+        accounts={[]}
+        options={{ webvisor: true, defer: true }}
+        version="2"
+      />
       <Component {...pageProps} />
     </>
   );
