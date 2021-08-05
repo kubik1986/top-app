@@ -159,6 +159,7 @@ export const Product = motion(
                 appearance="primary"
                 href={product.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Узнать подробнее: переход на страницу продукта"
               >
                 Узнать подробнее
