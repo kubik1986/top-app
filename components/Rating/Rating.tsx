@@ -145,6 +145,7 @@ export const Rating = forwardRef(
           role={isEditable ? 'radiogroup' : 'img'}
           aria-label={isEditable ? 'Оценка' : 'Рейтинг ' + rating + ' из 5'}
           aria-invalid={!isEditable ? undefined : error ? true : false}
+          title={isEditable ? undefined : 'Рейтинг ' + rating}
         >
           {ratingArray.map((r, i) => (
             <span key={i}>{r}</span>
