@@ -101,7 +101,7 @@ export const Menu = (): JSX.Element => {
               <button
                 className={styles.secondLevel}
                 onClick={() => openSecondLevel(m._id.secondCategory)}
-                aria-expanded={m.isOpened}
+                aria-expanded={m.isOpened ? true : false}
               >
                 {m._id.secondCategory}
               </button>
