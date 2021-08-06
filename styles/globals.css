@@ -37,17 +37,17 @@ a {
 }
 
 :root {
-  --black: #3b434e;
+  --black: #3B434E;
   --white: white;
-  --gray: #a4a4a4;
-  --gray-light: #ebebeb;
-  --gray-dark: #6c7077;
-  --primary: #7351f5;
-  --primary-hover: #613cf5;
-  --red: #fc836d;
-  --red-light: #fac6bd;
-  --green: #037f47;
-  --green-light: #d5fdec;
-  --background-color: #f5f6f8;
+  --gray: #A4A4A4;
+  --gray-light: #EBEBEB;
+  --gray-dark: #6C7077;
+  --primary: #7351F5;
+  --primary-hover: #613CF5;
+  --red: #FC836D;
+  --red-light: #FAC6BD;
+  --green: #037F47;
+  --green-light: #D5FDEC;
+  --background-color: #F5F6F8;
   --font-family: 'Noto Sans', sans-serif;
 }

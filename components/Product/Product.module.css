@@ -159,7 +159,7 @@
 
   content: '';
 
-  border-bottom: 1px dashed #c4c4c4;
+  border-bottom: 1px dashed #C4C4C4;
 }
 
 .tags {
@@ -200,7 +200,7 @@
 }
 
 .advantages::after {
-  background-color: #1dc37e;
+  background-color: #1DC37E;
 }
 
 .disadvantages::after {
