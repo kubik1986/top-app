@@ -43,6 +43,8 @@
 .main {
   grid-area: main;
 
+  padding-top: 40px;
+
   outline: none;
 }
 
