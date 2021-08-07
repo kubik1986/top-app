@@ -32,6 +32,25 @@ export const Menu = (): JSX.Element => {
     },
   };
 
+  const variantsParentLast = {
+    visible: {
+      marginTop: 13,
+      marginBottom: 0,
+      height: 'auto',
+      transition: shouldReduceMotion
+        ? {}
+        : {
+            when: 'beforeChildren',
+            staggerChildren: 0.1,
+          },
+    },
+    hidden: {
+      height: 0,
+      marginTop: 0,
+      marginBottom: 0,
+    },
+  };
+
   const variantsChildren = {
     visible: shouldReduceMotion
       ? {}
@@ -90,7 +109,7 @@ export const Menu = (): JSX.Element => {
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
       <ul className={styles.secondLevelList}>
-        {menu.map((m) => {
+        {menu.map((m, i) => {
           if (
             m.pages.map((p) => p.alias).includes(router.asPath.split('/')[2])
           ) {
@@ -107,8 +126,9 @@ export const Menu = (): JSX.Element => {
               </button>
               <motion.ul
                 className={styles.thirdLevelList}
-                layout
-                variants={variantsParent}
+                variants={
+                  i == menu.length - 1 ? variantsParentLast : variantsParent
+                }
                 initial={m.isOpened ? 'visible' : 'hidden'}
                 animate={m.isOpened ? 'visible' : 'hidden'}
               >

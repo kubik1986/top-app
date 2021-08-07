@@ -23,7 +23,7 @@ export const AppContextProvider = ({
     setMenuState(newMenu);
   };
 
-  useEffect(() => setMenu(menu), [menu]);
+  useEffect(() => setMenu(menu), [firstCategory]);
 
   return (
     <AppContext.Provider value={{ menu: menuState, firstCategory, setMenu }}>
